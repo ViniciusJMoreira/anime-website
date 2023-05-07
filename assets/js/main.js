@@ -1,26 +1,26 @@
 /*=============== SHOW MENU ===============*/
-
+const navMenu = document.getElementById('nav-menu'),
+navToggle = document.getElementById('nav-toggle'),
+navClose = document.getElementById('nav-close'),
+navLink = document.querySelectorAll('.nav-link')
 /*===== MENU SHOW =====*/
 /* Validate if constant exists */
-const navMenu = document.getElementById('nav-menu')
-function showMenu () {
-  navMenu.style.setProperty('right', '0')
+if(navToggle) {
+  navToggle.addEventListener('click', () => navMenu.classList.add('show-menu'))
 }
-const navToggle = document.getElementById('nav-toggle')
-navToggle.addEventListener('click', showMenu)
 /*===== MENU HIDDEN =====*/
 /* Validate if constant exists */
-const navLink = document.querySelectorAll('.nav-link')
 function hiddenMenu() {
-  navMenu.style.setProperty('right', '-100%')
+  navMenu.classList.remove('show-menu')
+}
+if(navClose) {
+  navClose.addEventListener('click', hiddenMenu)
 }
 function activeLink() {
   navLink.forEach((link) =>
   link.classList.remove('active-link'))
   this.classList.add('active-link')
 }
-const navClose = document.getElementById('nav-close')
-navClose.addEventListener('click', hiddenMenu)
 navLink.forEach((item) => {
   item.addEventListener('click', hiddenMenu)
   item.addEventListener('click', activeLink)

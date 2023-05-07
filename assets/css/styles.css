@@ -377,6 +377,10 @@ img {
     width: 400px;
     height: 100%;
     padding: 4rem 1rem;
+    transition: all 0.3s var(--transition);
+  }
+  .show-menu {
+    right: 0;
   }
   .nav-list {
     flex-direction: column;
